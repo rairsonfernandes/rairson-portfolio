@@ -33,7 +33,7 @@ const ProjectModal = () => {
                 </button>
 
                 <div className="modal-left">
-                    <img src={selectedProject.img} alt={selectedProject.title} />
+                    <img src={selectedProject.img} alt={selectedProject.title} loading="lazy" />
                     <div className="modal-img-badge">
                         <i className="fas fa-code"></i> Projeto
                     </div>
@@ -53,7 +53,6 @@ const ProjectModal = () => {
                     </div>
 
                     <div className="modal-buttons">
-                        {/* Botão Ver Projeto Online */}
                         {selectedProject.link && (
                             <a 
                                 href={selectedProject.link} 
@@ -65,7 +64,6 @@ const ProjectModal = () => {
                                 {t('projects.demo')}
                             </a>
                         )}
-                        {/* Botão Ver no GitHub */}
                         {selectedProject.github && (
                             <a 
                                 href={selectedProject.github} 

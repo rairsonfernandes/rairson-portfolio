@@ -28,6 +28,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -525,39 +526,6 @@ body::before {
 }
 
 /* ============================================================
-   TEMA CLARO - MODAL
-   ============================================================ */
-[data-theme="light"] .modal-container {
-    background: #ffffff;
-    border: 1px solid rgba(79, 172, 254, 0.15);
-    box-shadow: var(--shadow-lg);
-}
-
-[data-theme="light"] .modal-right h2 {
-    color: #0a1628;
-}
-
-[data-theme="light"] .modal-desc {
-    color: rgba(10, 22, 40, 0.8);
-}
-
-[data-theme="light"] .tech-badge {
-    background: rgba(79, 172, 254, 0.1);
-    color: #4facfe;
-    border-color: rgba(79, 172, 254, 0.15);
-}
-
-[data-theme="light"] .btn-close {
-    border: 2px solid rgba(10, 22, 40, 0.12);
-    color: #0a1628;
-}
-
-[data-theme="light"] .btn-close:hover {
-    background: rgba(10, 22, 40, 0.06);
-    border-color: rgba(10, 22, 40, 0.2);
-}
-
-/* ============================================================
    TEMA CLARO - FOOTER
    ============================================================ */
 [data-theme="light"] footer {
@@ -677,10 +645,8 @@ body::before {
     }
 }
 
-
-
 /* ============================================================
-   SCROLL TO TOP BUTTON
+   SCROLL TO TOP BUTTON - CORRIGIDO
    ============================================================ */
 .scroll-to-top {
     position: fixed;
@@ -701,6 +667,9 @@ body::before {
     align-items: center;
     justify-content: center;
     animation: fadeInUp 0.3s ease;
+    max-width: 50px;
+    max-height: 50px;
+    flex-shrink: 0;
 }
 
 .scroll-to-top:hover {
@@ -743,21 +712,18 @@ body::before {
 }
 
 /* ============================================================
-   RESPONSIVO - SCROLL TO TOP
+   RESPONSIVO - SCROLL TO TOP CORRIGIDO
    ============================================================ */
 @media (max-width: 768px) {
     .scroll-to-top {
         bottom: 20px;
         right: 20px;
-        width: 48px;
-        height: 48px;
-        font-size: 18px;
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+        max-width: 44px;
+        max-height: 44px;
         box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
-    }
-
-    .scroll-to-top:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4);
     }
 }
 
@@ -765,14 +731,11 @@ body::before {
     .scroll-to-top {
         bottom: 16px;
         right: 16px;
-        width: 44px;
-        height: 44px;
-        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+        max-width: 40px;
+        max-height: 40px;
         box-shadow: 0 4px 12px rgba(0, 242, 254, 0.25);
-    }
-
-    .scroll-to-top:hover {
-        transform: translateY(-2px) scale(1.05);
-        box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
     }
 }

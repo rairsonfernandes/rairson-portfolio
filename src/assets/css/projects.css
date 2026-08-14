@@ -137,7 +137,7 @@
 }
 
 /* ============================================================
-   MODAL PREMIUM - IMAGEM CORRIGIDA
+   MODAL PREMIUM - RESPONSIVO CORRIGIDO
    ============================================================ */
 .modal-overlay {
     position: fixed;
@@ -155,7 +155,8 @@
     visibility: hidden;
     opacity: 0;
     transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    padding: 20px;
+    padding: 15px;
+    overflow: hidden;
 }
 
 .modal-overlay.active {
@@ -173,12 +174,12 @@
     border-radius: 32px;
     max-width: 1100px;
     width: 100%;
-    max-height: 90vh;
+    max-height: 92vh;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
     border: 1px solid rgba(0, 242, 254, 0.2);
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 242, 254, 0.05);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
     transform: scale(0.92) translateY(20px);
     opacity: 0;
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -213,9 +214,7 @@
     border-color: rgba(0, 242, 254, 0.3);
 }
 
-/* ============================================================
-   MODAL - IMAGEM (CORRIGIDA)
-   ============================================================ */
+/* Modal - Imagem */
 .modal-left {
     flex: 1.2;
     min-width: 300px;
@@ -242,7 +241,6 @@
     transform: scale(1.02);
 }
 
-/* Badge de tecnologia no canto da imagem */
 .modal-img-badge {
     position: absolute;
     bottom: 20px;
@@ -260,9 +258,7 @@
     z-index: 2;
 }
 
-/* ============================================================
-   MODAL - LADO DIREITO (CONTEÚDO)
-   ============================================================ */
+/* Modal - Conteúdo Direito */
 .modal-right {
     flex: 1;
     padding: 40px 40px 35px;
@@ -386,6 +382,24 @@
     border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Botão GitHub */
+.btn-github {
+    background: #24292e;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(36, 41, 46, 0.25);
+}
+
+.btn-github:hover {
+    background: #2f363d;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(36, 41, 46, 0.35);
+}
+
+.btn-github i {
+    font-size: 18px;
+}
+
 /* ============================================================
    TEMA CLARO - MODAL
    ============================================================ */
@@ -452,114 +466,13 @@
     color: rgba(10, 22, 40, 0.4);
 }
 
-/* ============================================================
-   RESPONSIVO - IMAGEM CORRIGIDA
-   ============================================================ */
-@media (max-width: 850px) {
-    .modal-container {
-        flex-direction: column;
-        max-height: 95vh;
-        border-radius: 24px;
-        width: 98%;
-    }
-
-    .modal-left {
-        height: 250px;
-        min-height: 200px;
-        width: 100%;
-        flex: none;
-    }
-
-    .modal-left img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        padding: 12px;
-    }
-
-    .modal-right {
-        padding: 28px 24px 24px;
-        max-height: 55vh;
-    }
-
-    .modal-right h2 {
-        font-size: 26px;
-    }
-
-    .modal-close-btn {
-        top: 12px;
-        right: 12px;
-        width: 38px;
-        height: 38px;
-        font-size: 16px;
-    }
-
-    .modal-img-badge {
-        display: none;
-    }
+[data-theme="light"] .btn-github {
+    background: #24292e;
+    color: #ffffff;
 }
 
-@media (max-width: 480px) {
-    .modal-container {
-        border-radius: 20px;
-        width: 100%;
-        max-height: 98vh;
-    }
-
-    .modal-left {
-        height: 200px;
-        min-height: 160px;
-        flex: none;
-    }
-
-    .modal-left img {
-        height: 100%;
-        width: 100%;
-        object-fit: contain;
-        padding: 8px;
-    }
-
-    .modal-right {
-        padding: 20px 18px 18px;
-        max-height: 60vh;
-    }
-
-    .modal-right h2 {
-        font-size: 22px;
-    }
-
-    .modal-desc {
-        font-size: 14px;
-        line-height: 1.6;
-    }
-
-    .modal-tech {
-        gap: 6px;
-    }
-
-    .tech-badge {
-        font-size: 11px;
-        padding: 4px 12px;
-    }
-
-    .modal-buttons {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .btn-modal {
-        justify-content: center;
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-
-    .modal-close-btn {
-        top: 10px;
-        right: 10px;
-        width: 34px;
-        height: 34px;
-        font-size: 14px;
-    }
+[data-theme="light"] .btn-github:hover {
+    background: #2f363d;
 }
 
 /* ============================================================
@@ -601,15 +514,204 @@
 }
 
 /* ============================================================
-   TEMA CLARO - RESPONSIVO
+   RESPONSIVO - MODAL CORRIGIDO
    ============================================================ */
-@media (max-width: 850px) {
+@media (max-width: 992px) {
+    .modal-container {
+        max-width: 95%;
+        max-height: 90vh;
+        border-radius: 28px;
+    }
+
+    .modal-left {
+        min-height: 220px;
+        min-width: 200px;
+    }
+
+    .modal-left img {
+        padding: 16px;
+    }
+
+    .modal-right {
+        padding: 30px 28px 28px;
+        max-height: 55vh;
+    }
+
+    .modal-right h2 {
+        font-size: 26px;
+    }
+
+    .modal-desc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .modal-close-btn {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-overlay {
+        padding: 10px;
+        align-items: flex-end;
+    }
+
+    .modal-container {
+        flex-direction: column;
+        max-height: 95vh;
+        border-radius: 24px;
+        width: 100%;
+        margin-bottom: 0;
+        max-width: 100%;
+    }
+
+    .modal-left {
+        height: 200px;
+        min-height: 180px;
+        width: 100%;
+        flex: none;
+        border-radius: 24px 24px 0 0;
+    }
+
+    .modal-left img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 12px;
+    }
+
+    .modal-right {
+        padding: 24px 20px 20px;
+        max-height: 55vh;
+        overflow-y: auto;
+        flex: 1;
+    }
+
+    .modal-right h2 {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    .modal-subtitle {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .modal-divider {
+        width: 40px;
+        margin-bottom: 14px;
+    }
+
+    .modal-desc {
+        font-size: 14px;
+        line-height: 1.6;
+        margin: 6px 0 12px;
+    }
+
+    .modal-tech {
+        gap: 6px;
+        margin: 8px 0 16px;
+    }
+
+    .tech-badge {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 4px;
+    }
+
+    .btn-modal {
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .modal-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 36px;
+        height: 36px;
+        font-size: 15px;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 20;
+    }
+
+    .modal-img-badge {
+        display: none;
+    }
+
     [data-theme="light"] .modal-left {
         background: #f0f4ff;
     }
 }
 
 @media (max-width: 480px) {
+    .modal-overlay {
+        padding: 6px;
+        align-items: flex-end;
+    }
+
+    .modal-container {
+        border-radius: 20px;
+        max-height: 98vh;
+        width: 100%;
+    }
+
+    .modal-left {
+        height: 160px;
+        min-height: 140px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .modal-left img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 8px;
+    }
+
+    .modal-right {
+        padding: 18px 16px 16px;
+        max-height: 60vh;
+    }
+
+    .modal-right h2 {
+        font-size: 20px;
+    }
+
+    .modal-desc {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .tech-badge {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+
+    .btn-modal {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+
+    .modal-close-btn {
+        top: 8px;
+        right: 8px;
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
     [data-theme="light"] .modal-left {
         background: #f0f4ff;
     }
@@ -631,36 +733,4 @@
 
 .modal-overlay.active .modal-container {
     animation: modalFadeIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-}
-
-
-
-/* ============================================================
-   BOTÃO GITHUB
-   ============================================================ */
-.btn-github {
-    background: #24292e;
-    color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 20px rgba(36, 41, 46, 0.25);
-}
-
-.btn-github:hover {
-    background: #2f363d;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 35px rgba(36, 41, 46, 0.35);
-}
-
-.btn-github i {
-    font-size: 18px;
-}
-
-/* Tema Claro */
-[data-theme="light"] .btn-github {
-    background: #24292e;
-    color: #ffffff;
-}
-
-[data-theme="light"] .btn-github:hover {
-    background: #2f363d;
 }

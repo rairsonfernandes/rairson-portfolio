@@ -48,7 +48,9 @@ const Hero = () => {
                     >
                         <i className="fas fa-code"></i> {t('hero.btn_projects')}
                     </button>
-                    
+                    <button className="btn-outline" onClick={handleDownloadCV}>
+                        <i className="fas fa-download"></i> {t('hero.btn_cv')}
+                    </button>
                 </div>
             </div>
             
