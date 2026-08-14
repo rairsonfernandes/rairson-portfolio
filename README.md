@@ -40,7 +40,6 @@ Este projeto foi criado para servir como meu portfólio profissional, demonstran
 | ✔️ Tema Claro/Escuro | ✅ |
 | ✔️ Tradução em 5 idiomas | ✅ |
 | ✔️ Modal de projetos | ✅ |
-| ✔️ Download de CV | ✅ |
 | ✔️ Formulário de contacto | ✅ |
 | ✔️ SEO otimizado | ✅ |
 | ✔️ Open Graph | ✅ |
@@ -75,36 +74,65 @@ Este projeto foi criado para servir como meu portfólio profissional, demonstran
 
 ## 📁 Estrutura do Projeto
 
-
 rairson-portfolio/
+│
 ├── public/
-│   ├── images/                 # Imagens e recursos visuais
-│   ├── index.html              # HTML principal e configurações de SEO
-│   ├── robots.txt              # Diretrizes para mecanismos de busca
-│   ├── sitemap.xml             # Sitemap para indexação
-│   └── og-image.jpg            # Imagem para compartilhamento em redes sociais
+│   ├── images/
+│   │   ├── Projetos/              # Imagens dos projetos
+│   │   ├── flags/                # Bandeiras dos idiomas
+│   │   └── logo/                 # Favicons e identidade visual
+│   │
+│   ├── index.html                # Documento HTML principal e SEO
+│   ├── robots.txt                # Configurações para mecanismos de busca
+│   ├── sitemap.xml               # Sitemap para indexação
+│   └── site.webmanifest          # Configuração PWA / instalação
 │
 ├── src/
 │   ├── assets/
-│   │   └── css/                # Estilos CSS organizados por componente
+│   │   └── css/                  # Estilos organizados por componente
 │   │
-│   ├── components/             # Componentes React reutilizáveis
+│   ├── components/               # Componentes React reutilizáveis
+│   │   ├── About.jsx
+│   │   ├── Certificates.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── LanguageSelector.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── ProjectModal.jsx
+│   │   ├── Projects.jsx
+│   │   ├── ScrollToTop.jsx
+│   │   └── Skills.jsx
 │   │
-│   ├── context/                # Context API (tema, projetos e estados globais)
+│   ├── context/                  # Context API e estados globais
+│   │   ├── ProjectContext.jsx
+│   │   └── ThemeContext.jsx
 │   │
-│   ├── data/                   # Dados estáticos dos projetos
+│   ├── data/                     # Dados estáticos dos projetos
+│   │   └── projects.js
 │   │
-│   ├── i18n/                   # Internacionalização e traduções
-│   │                              # Suporte a 5 idiomas
+│   ├── i18n/                     # Internacionalização
+│   │   ├── locales/              # Arquivos de tradução
+│   │   ├── config.js
+│   │   └── index.js
 │   │
-│   ├── App.jsx                 # Componente principal da aplicação
-│   └── index.js                # Inicialização/configuração adicional
+│   ├── images/                   # Imagens utilizadas pelos componentes
+│   │
+│   ├── App.jsx                   # Componente raiz da aplicação
+│   └── index.js                  # Ponto de entrada da aplicação
 │
-├── .env                        # Modelo das variáveis de ambiente
-├── .gitignore                  # Arquivos ignorados pelo Git
-├── package.json                # Dependências e scripts do projeto
-├── package-lock.json           # Lockfile das dependências
-└── README.md                   # Documentação do projeto
+├── screenshots/
+│   ├── desktop.png               # Preview desktop
+│   ├── tablet.png                # Preview tablet
+│   └── mobile.png                # Preview mobile
+│
+├── .env.example                  # Modelo das variáveis de ambiente
+├── .gitignore                    # Arquivos ignorados pelo Git
+├── .oxlintrc.json                # Configuração do OXLint
+├── package.json                  # Dependências e scripts
+├── package-lock.json             # Versões das dependências
+├── vite.config.js                # Configuração do Vite
+└── README.md                     # Documentação do projeto
 
 
 
@@ -122,7 +150,7 @@ rairson-portfolio/
 1. **Clone o repositório**
 
 
-git clone https://github.com/rairsonfernandes/portfolio.git
+git clone https://github.com/rairsonfernandes/rairson-portfolio.git
 cd portfolio
 Instale as dependências
 
@@ -168,7 +196,7 @@ GitHub Pages
 npm install --save-dev gh-pages
 Adicione ao package.json:
 
-
+'
 "homepage": "https://seu-usuario.github.io/portfolio",
 "scripts": {
   "predeploy": "npm run build",
@@ -228,12 +256,16 @@ Abra um Pull Request
 
 Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
-📞 Contato
+## 📞 Contato
 
-Rede Social	Link
-LinkedIn	linkedin.com/in/rairsonfernandes
-GitHub	    github.com/rairsonfernandes
-E-mail	    rairsonfernandes@gmail.com
+Estou disponível para oportunidades, projetos e colaborações.
+
+| Plataforma | Link |
+|:---|:---|
+| 💼 **LinkedIn** | [linkedin.com/in/rairsonfernandes](https://www.linkedin.com/in/rairsonfernandes/) |
+| 💻 **GitHub** | [github.com/rairsonfernandes](https://github.com/rairsonfernandes) |
+| 📧 **E-mail** | [rairsonfernandes@gmail.com](mailto:rairsonfernandes@gmail.com) |
+| 🌐 **Portfólio** | [rairson-portfolio.onrender.com](https://rairson-portfolio.onrender.com/) |
 
 🙏 Agradecimentos
 React - Framework JavaScript
