@@ -71,11 +71,16 @@ Este projeto foi criado para servir como meu portfólio profissional, demonstran
 | EmailJS | 3.11.0 | Envio de e-mails do formulário |
 | react-helmet-async | 2.0.4 | Gerenciamento de head SEO |
 
-## 📁 Estrutura do Projeto
 
-A aplicação foi desenvolvida com **React + Vite** e organizada de forma modular, priorizando reutilização de componentes, manutenção do código, internacionalização e boas práticas de desenvolvimento.
 
-```text
+<h2>📁 Estrutura do Projeto</h2>
+
+<p>
+  A aplicação foi desenvolvida com <strong>React + Vite</strong> e organizada de forma modular,
+  priorizando reutilização de componentes, manutenção do código, internacionalização e boas práticas.
+</p>
+
+<pre>
 rairson-portfolio/
 │
 ├── public/
@@ -135,7 +140,7 @@ rairson-portfolio/
 ├── package-lock.json              # Versões das dependências
 ├── vite.config.js                 # Configuração do Vite
 └── README.md                      # Documentação do projeto
-
+</pre>
 
 
 
