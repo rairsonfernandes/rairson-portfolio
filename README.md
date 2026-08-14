@@ -75,7 +75,7 @@ Este projeto foi criado para servir como meu portfólio profissional, demonstran
 
 A aplicação foi desenvolvida com **React + Vite** e organizada de forma modular, priorizando reutilização de componentes, manutenção do código, internacionalização e boas práticas de desenvolvimento.
 
-
+```text
 rairson-portfolio/
 │
 ├── public/
