@@ -1,0 +1,233 @@
+/* ============================================================
+   LANGUAGE SELECTOR
+   ============================================================ */
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.language-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 30px;
+    padding: 8px 14px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.language-toggle:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(0, 242, 254, 0.3);
+    transform: translateY(-1px);
+}
+
+.language-toggle .lang-flag {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.language-toggle .lang-flag-img {
+    width: 24px;
+    height: 18px;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.language-toggle .lang-code {
+    font-size: 11px;
+    font-weight: 600;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+.language-toggle i {
+    font-size: 10px;
+    opacity: 0.6;
+    transition: transform 0.3s ease;
+}
+
+.language-toggle:hover i {
+    opacity: 1;
+}
+
+/* Dropdown */
+.language-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 220px;
+    background: rgba(10, 15, 40, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    border-radius: 16px;
+    padding: 8px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    animation: slideDown 0.2s ease;
+    z-index: 2000;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 10px 14px;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.language-option:hover {
+    background: rgba(0, 242, 254, 0.08);
+    color: #fff;
+}
+
+.language-option.active {
+    background: rgba(0, 242, 254, 0.12);
+    color: #00f2fe;
+}
+
+.language-option .lang-flag {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.language-option .lang-flag-img {
+    width: 28px;
+    height: 20px;
+    border-radius: 3px;
+    object-fit: cover;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.language-option .lang-name {
+    flex: 1;
+    text-align: left;
+}
+
+.language-option i {
+    font-size: 14px;
+    color: #00f2fe;
+}
+
+/* ============================================================
+   TEMA CLARO
+   ============================================================ */
+[data-theme="light"] .language-toggle {
+    background: rgba(10, 22, 40, 0.04);
+    border-color: rgba(10, 22, 40, 0.12);
+    color: #0a1628;
+}
+
+[data-theme="light"] .language-toggle:hover {
+    background: rgba(79, 172, 254, 0.08);
+    border-color: rgba(79, 172, 254, 0.3);
+}
+
+[data-theme="light"] .language-dropdown {
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-color: rgba(79, 172, 254, 0.15);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .language-option {
+    color: rgba(10, 22, 40, 0.8);
+}
+
+[data-theme="light"] .language-option:hover {
+    background: rgba(79, 172, 254, 0.06);
+    color: #0a1628;
+}
+
+[data-theme="light"] .language-option.active {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+}
+
+[data-theme="light"] .language-option i {
+    color: #4facfe;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 850px) {
+    .language-toggle .lang-code {
+        display: none;
+    }
+    
+    .language-toggle {
+        padding: 8px 12px;
+        gap: 6px;
+    }
+    
+    .language-dropdown {
+        right: -10px;
+        min-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .language-toggle .lang-code {
+        display: none;
+    }
+    
+    .language-toggle {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .language-toggle .lang-flag {
+        font-size: 16px;
+    }
+    
+    .language-toggle .lang-flag-img {
+        width: 20px;
+        height: 14px;
+    }
+    
+    .language-dropdown {
+        right: -20px;
+        min-width: 180px;
+    }
+    
+    .language-option .lang-flag {
+        font-size: 18px;
+    }
+    
+    .language-option .lang-flag-img {
+        width: 22px;
+        height: 16px;
+    }
+}
+
+
+

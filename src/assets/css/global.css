@@ -1,0 +1,778 @@
+:root {
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+    --accent-primary: #00f2fe;
+    --accent-secondary: #4facfe;
+    --accent-gradient: linear-gradient(135deg, #00f2fe, #4facfe, #6366f1);
+    --card-bg: rgba(15, 23, 42, 0.7);
+    --border-color: rgba(0, 242, 254, 0.2);
+    --shadow-color: rgba(0, 242, 254, 0.3);
+    --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.5);
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 28px;
+    --radius-xl: 40px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', 'Inter', 'Poppins', system-ui, -apple-system, sans-serif;
+    background: radial-gradient(circle at 75% 50%, #0f172a 0%, #020617 45%, #000000 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    transition: background 0.5s ease, color 0.3s ease;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    right: -10%;
+    top: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0, 242, 254, .12), transparent 70%);
+    filter: blur(80px);
+    animation: pulse 5s infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 0.4; }
+    to { transform: scale(1.3); opacity: 0.8; }
+}
+
+.container-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 80px 6% 70px;
+    position: relative;
+    z-index: 5;
+}
+
+.section-title {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+}
+
+.section-sub {
+    color: var(--text-secondary);
+    margin-bottom: 50px;
+    font-size: 18px;
+    border-left: 4px solid var(--accent-primary);
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+.btn-primary {
+    padding: 14px 32px;
+    background: var(--accent-gradient);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 10px 25px var(--shadow-color);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent);
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px var(--shadow-color);
+}
+
+.btn-primary:hover::after {
+    opacity: 1;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--accent-primary);
+    padding: 12px 22px;
+    border-radius: var(--radius-xl);
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn-outline:hover {
+    background: rgba(0, 242, 254, 0.15);
+    border-color: var(--accent-secondary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+@media (max-width: 750px) {
+    .section-title { font-size: 32px; }
+    .container-section { padding: 60px 5% 50px; }
+}
+
+/* Scrollbar Custom */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-gradient);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4facfe;
+}
+
+/* ============================================================
+   THEME DARK (Padrão)
+   ============================================================ */
+[data-theme="dark"] {
+    --bg-primary: #020617;
+    --bg-secondary: #0f172a;
+    --bg-card: rgba(15, 23, 42, 0.8);
+    --bg-card-hover: rgba(30, 58, 95, 0.6);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.75);
+    --text-muted: rgba(255, 255, 255, 0.45);
+    --border-color: rgba(0, 242, 254, 0.2);
+    --border-hover: rgba(0, 242, 254, 0.5);
+    --shadow-color: rgba(0, 242, 254, 0.25);
+    --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.6);
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --input-bg: rgba(255, 255, 255, 0.06);
+    --input-border: rgba(255, 255, 255, 0.12);
+    --input-focus: rgba(0, 242, 254, 0.3);
+}
+
+/* ============================================================
+   THEME LIGHT (Premium Empresarial)
+   ============================================================ */
+[data-theme="light"] {
+    --bg-primary: #f8faff;
+    --bg-secondary: #ffffff;
+    --bg-card: rgba(255, 255, 255, 0.92);
+    --bg-card-hover: rgba(255, 255, 255, 0.98);
+    --text-primary: #0a1628;
+    --text-secondary: rgba(10, 22, 40, 0.72);
+    --text-muted: rgba(10, 22, 40, 0.5);
+    --border-color: rgba(79, 172, 254, 0.2);
+    --border-hover: rgba(79, 172, 254, 0.5);
+    --shadow-color: rgba(79, 172, 254, 0.2);
+    --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 8px 40px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(79, 172, 254, 0.1);
+    --input-bg: rgba(10, 22, 40, 0.04);
+    --input-border: rgba(10, 22, 40, 0.12);
+    --input-focus: rgba(79, 172, 254, 0.3);
+}
+
+/* ============================================================
+   TEMA CLARO - BACKGROUNDS
+   ============================================================ */
+[data-theme="light"] body {
+    background: linear-gradient(165deg, #f0f6ff 0%, #e8eeff 30%, #dce4ff 60%, #eef3ff 100%);
+}
+
+[data-theme="light"] body::before {
+    background: radial-gradient(circle, rgba(79, 172, 254, 0.08), transparent 70%);
+}
+
+/* ============================================================
+   TEMA CLARO - HEADER
+   ============================================================ */
+[data-theme="light"] .header {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(79, 172, 254, 0.12);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .logo {
+    color: #0a1628;
+}
+
+[data-theme="light"] .nav-link {
+    color: rgba(10, 22, 40, 0.7);
+}
+
+[data-theme="light"] .nav-link:hover {
+    color: #4facfe;
+}
+
+[data-theme="light"] .nav-link::after {
+    background: linear-gradient(90deg, #4facfe, #6366f1);
+}
+
+[data-theme="light"] .theme-toggle {
+    border-color: rgba(10, 22, 40, 0.15);
+    color: #0a1628;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    border-color: #4facfe;
+    color: #4facfe;
+    background: rgba(79, 172, 254, 0.08);
+}
+
+/* ============================================================
+   TEMA CLARO - HERO
+   ============================================================ */
+[data-theme="light"] .hero-tag {
+    color: #4facfe;
+}
+
+[data-theme="light"] .hero-description {
+    color: rgba(10, 22, 40, 0.7);
+}
+
+[data-theme="light"] .badge {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+    border: 1px solid rgba(79, 172, 254, 0.15);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .badge::before {
+    background: radial-gradient(circle at var(--light-x, 50%) var(--light-y, 50%), rgba(79, 172, 254, 0.15), transparent 55%);
+}
+
+[data-theme="light"] .overlay-gradient {
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0.3) 40%, transparent 80%);
+}
+
+[data-theme="light"] .name {
+    color: #0a1628;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .subtitle {
+    color: #4facfe;
+}
+
+[data-theme="light"] .clip {
+    background: linear-gradient(to bottom, #e0e0e0, #b0b0b0, #888888);
+    border-bottom: 1px solid rgba(200, 200, 200, 0.7);
+}
+
+/* ============================================================
+   TEMA CLARO - ABOUT
+   ============================================================ */
+[data-theme="light"] .about-text {
+    color: rgba(10, 22, 40, 0.85);
+}
+
+[data-theme="light"] .about-text strong {
+    color: #4facfe;
+}
+
+[data-theme="light"] .about-img {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.08), rgba(99, 102, 241, 0.05));
+    border: 1px solid rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .stats-badge {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: #4facfe;
+    color: #4facfe;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.15);
+}
+
+/* ============================================================
+   TEMA CLARO - SKILLS
+   ============================================================ */
+[data-theme="light"] .skill-category h3 {
+    color: #4facfe;
+}
+
+[data-theme="light"] .skill-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 172, 254, 0.12);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .skill-card:hover {
+    border-color: #4facfe;
+    background: rgba(79, 172, 254, 0.06);
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.12);
+    transform: translateY(-6px);
+}
+
+[data-theme="light"] .skill-card h4 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .skill-card p {
+    color: rgba(10, 22, 40, 0.6);
+}
+
+/* ============================================================
+   TEMA CLARO - PROJECTS
+   ============================================================ */
+[data-theme="light"] .project-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 172, 254, 0.1);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .project-card:hover {
+    border-color: #4facfe;
+    box-shadow: 0 12px 40px rgba(79, 172, 254, 0.12);
+    transform: translateY(-8px);
+}
+
+[data-theme="light"] .project-info h3 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .project-info p {
+    color: rgba(10, 22, 40, 0.7);
+}
+
+[data-theme="light"] .project-tech-tags span {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+}
+
+[data-theme="light"] .project-overlay span {
+    background: rgba(79, 172, 254, 0.2);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================================
+   TEMA CLARO - CERTIFICATES
+   ============================================================ */
+[data-theme="light"] .cert-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 172, 254, 0.1);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .cert-card:hover {
+    border-color: #4facfe;
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.1);
+    transform: translateY(-5px);
+}
+
+[data-theme="light"] .cert-card h4 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .cert-card p {
+    color: rgba(10, 22, 40, 0.6);
+}
+
+[data-theme="light"] .cert-verify {
+    color: #4facfe;
+    border-color: rgba(79, 172, 254, 0.2);
+}
+
+[data-theme="light"] .cert-verify:hover {
+    background: rgba(79, 172, 254, 0.08);
+}
+
+/* ============================================================
+   TEMA CLARO - CONTACT
+   ============================================================ */
+[data-theme="light"] .form-container {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(79, 172, 254, 0.12);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .form-group label {
+    color: rgba(10, 22, 40, 0.75);
+    font-weight: 600;
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background: rgba(10, 22, 40, 0.04);
+    border: 2px solid rgba(10, 22, 40, 0.08);
+    color: #0a1628;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group textarea:focus {
+    border-color: #4facfe;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 4px rgba(79, 172, 254, 0.1);
+}
+
+[data-theme="light"] .form-group input::placeholder,
+[data-theme="light"] .form-group textarea::placeholder {
+    color: rgba(10, 22, 40, 0.4);
+}
+
+[data-theme="light"] .social-box {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(79, 172, 254, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .social-box:hover {
+    border-color: #4facfe;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.1);
+}
+
+[data-theme="light"] .social-box h3 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .social-box p {
+    color: rgba(10, 22, 40, 0.6);
+}
+
+[data-theme="light"] .btn-submit {
+    background: var(--accent-gradient);
+    color: #ffffff;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.25);
+}
+
+[data-theme="light"] .btn-submit:hover {
+    box-shadow: 0 8px 30px rgba(79, 172, 254, 0.35);
+    transform: translateY(-2px);
+}
+
+[data-theme="light"] .form-status.success {
+    background: rgba(52, 211, 153, 0.12);
+    border-color: rgba(52, 211, 153, 0.3);
+    color: #059669;
+}
+
+[data-theme="light"] .form-status.error {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #dc2626;
+}
+
+/* ============================================================
+   TEMA CLARO - MODAL
+   ============================================================ */
+[data-theme="light"] .modal-container {
+    background: #ffffff;
+    border: 1px solid rgba(79, 172, 254, 0.15);
+    box-shadow: var(--shadow-lg);
+}
+
+[data-theme="light"] .modal-right h2 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .modal-desc {
+    color: rgba(10, 22, 40, 0.8);
+}
+
+[data-theme="light"] .tech-badge {
+    background: rgba(79, 172, 254, 0.1);
+    color: #4facfe;
+    border-color: rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .btn-close {
+    border: 2px solid rgba(10, 22, 40, 0.12);
+    color: #0a1628;
+}
+
+[data-theme="light"] .btn-close:hover {
+    background: rgba(10, 22, 40, 0.06);
+    border-color: rgba(10, 22, 40, 0.2);
+}
+
+/* ============================================================
+   TEMA CLARO - FOOTER
+   ============================================================ */
+[data-theme="light"] footer {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(79, 172, 254, 0.08);
+}
+
+[data-theme="light"] footer p {
+    color: rgba(10, 22, 40, 0.6);
+}
+
+[data-theme="light"] .footer-social a {
+    color: rgba(10, 22, 40, 0.5);
+}
+
+[data-theme="light"] .footer-social a:hover {
+    color: #4facfe;
+    transform: translateY(-3px);
+}
+
+[data-theme="light"] .footer-links a {
+    color: rgba(10, 22, 40, 0.5);
+}
+
+[data-theme="light"] .footer-links a:hover {
+    color: #4facfe;
+}
+
+/* ============================================================
+   TEMA CLARO - BOTÕES E ELEMENTOS GERAIS
+   ============================================================ */
+[data-theme="light"] .section-sub {
+    color: rgba(10, 22, 40, 0.6);
+    border-left-color: #4facfe;
+}
+
+[data-theme="light"] .btn-primary {
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-outline {
+    color: #0a1628;
+    border-color: rgba(79, 172, 254, 0.4);
+}
+
+[data-theme="light"] .btn-outline:hover {
+    background: rgba(79, 172, 254, 0.1);
+    border-color: #4facfe;
+    color: #4facfe;
+}
+
+/* ============================================================
+   TEMA CLARO - CARDS
+   ============================================================ */
+[data-theme="light"] .card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(79, 172, 254, 0.08);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+[data-theme="light"] .card:hover {
+    border-color: rgba(79, 172, 254, 0.2);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+}
+
+/* ============================================================
+   TEMA CLARO - BADGE CONTAINER 3D
+   ============================================================ */
+[data-theme="light"] .badge-container .badge {
+    background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(255,255,255,0.5));
+    border: 1px solid rgba(79, 172, 254, 0.15);
+}
+
+/* ============================================================
+   TEMA CLARO - TEMA TOGGLE
+   ============================================================ */
+[data-theme="light"] .theme-toggle {
+    background: rgba(10, 22, 40, 0.04);
+    border: 2px solid rgba(10, 22, 40, 0.08);
+    color: #0a1628;
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(79, 172, 254, 0.08);
+    border-color: #4facfe;
+    color: #4facfe;
+}
+
+/* ============================================================
+   TEMA CLARO - RESPONSIVO
+   ============================================================ */
+@media (max-width: 850px) {
+    [data-theme="light"] .navbar {
+        background: rgba(255, 255, 255, 0.98);
+        border-right-color: rgba(79, 172, 254, 0.15);
+    }
+    
+    [data-theme="light"] .navbar.active {
+        background: rgba(255, 255, 255, 0.98);
+    }
+    
+    [data-theme="light"] .menu-icon {
+        color: #0a1628;
+    }
+    
+    [data-theme="light"] .overlay-menu {
+        background: rgba(10, 22, 40, 0.3);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+    }
+}
+
+
+
+/* ============================================================
+   SCROLL TO TOP BUTTON
+   ============================================================ */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.4);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeInUp 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 35px rgba(0, 242, 254, 0.6);
+    background: linear-gradient(135deg, #4facfe, #6366f1);
+}
+
+.scroll-to-top:active {
+    transform: scale(0.95);
+}
+
+.scroll-to-top i {
+    transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover i {
+    transform: translateY(-3px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Tema claro */
+[data-theme="light"] .scroll-to-top {
+    background: linear-gradient(135deg, #4facfe, #6366f1);
+    box-shadow: 0 4px 20px rgba(79, 172, 254, 0.3);
+}
+
+[data-theme="light"] .scroll-to-top:hover {
+    box-shadow: 0 8px 35px rgba(79, 172, 254, 0.5);
+}
+
+/* ============================================================
+   RESPONSIVO - SCROLL TO TOP
+   ============================================================ */
+@media (max-width: 768px) {
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+        box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+    }
+
+    .scroll-to-top:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 25px rgba(0, 242, 254, 0.4);
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-to-top {
+        bottom: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+        box-shadow: 0 4px 12px rgba(0, 242, 254, 0.25);
+    }
+
+    .scroll-to-top:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 20px rgba(0, 242, 254, 0.35);
+    }
+}

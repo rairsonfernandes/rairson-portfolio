@@ -1,0 +1,155 @@
+.hero-section {
+    padding-top: 30px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    min-width: 260px;
+}
+
+.hero-tag {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #00f2fe;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: 58px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.hero-title span {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-description {
+    font-size: 18px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    perspective: 1800px;
+}
+
+.badge-container {
+    width: 380px;
+    height: 560px;
+    position: relative;
+}
+
+.badge {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 38px;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    background: linear-gradient(145deg, rgba(255, 255, 255, .12), rgba(255, 255, 255, .03));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, .2);
+    box-shadow: 0 45px 90px rgba(0, 0, 0, .6);
+    transition: transform .12s ease-out;
+}
+
+.badge::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 38px;
+    background: radial-gradient(circle at var(--light-x, 50%) var(--light-y, 50%), rgba(255, 255, 255, 0.4), transparent 55%);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0.7;
+}
+
+.clip {
+    width: 95px;
+    height: 32px;
+    border-radius: 12px;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(55px);
+    background: linear-gradient(to bottom, #c0c0c0, #6e6e6e, #2c2c2c);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+    z-index: 20;
+    border-bottom: 1px solid rgba(255, 255, 240, 0.7);
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translateZ(50px);
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, .85) 0%, rgba(0, 0, 0, .45) 25%, rgba(0, 0, 0, .1) 50%, transparent 80%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.info {
+    position: absolute;
+    bottom: 30px;
+    left: 25px;
+    z-index: 10;
+    transform: translateZ(70px);
+}
+
+.name {
+    font-size: 38px;
+    font-weight: 800;
+    text-shadow: 0 4px 15px black;
+    color: white;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: #00f2fe;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+@media (max-width: 750px) {
+    .hero-title { font-size: 44px; }
+    .badge-container { width: 280px; height: 420px; margin: 0 auto; }
+    .name { font-size: 28px; }
+    .hero-buttons { flex-direction: column; align-items: stretch; }
+}

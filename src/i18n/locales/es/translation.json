@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Sobre mí",
+    "skills": "Habilidades",
+    "projects": "Proyectos",
+    "certificates": "Certificados",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "tag": "Desarrollador Full Stack",
+    "title": "Rairson Fernandes",
+    "subtitle": "Desarrollador Full Stack",
+    "description": "Especializado en PHP, React, JavaScript y desarrollo de APIs REST. Apasionado por crear aplicaciones modernas, escalables y centradas en la experiencia del usuario.",
+    "btn_projects": "Ver Proyectos",
+    "btn_cv": "Descargar CV"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Conoce un poco más sobre mi trayectoria",
+    "p1": "¡Hola! Soy Rairson Fernandes, Desarrollador Full Stack con experiencia en el desarrollo de aplicaciones web utilizando PHP, JavaScript, React y MySQL.",
+    "p2": "Me gusta desarrollar soluciones completas, desde el backend hasta el frontend, aplicando buenas prácticas de programación, arquitectura organizada y control de versiones con Git.",
+    "p3": "Actualmente estoy ampliando mis conocimientos en .NET y C#, con el objetivo de convertirme en un especialista en estas tecnologías y desarrollar aplicaciones aún más robustas y escalables.",
+    "p4": "Estoy buscando mi próxima oportunidad para seguir evolucionando como programador y contribuir a proyectos desafiantes.",
+    "stats": "+3 proyectos • 3+ años de código • En constante evolución",
+    "projects_delivered": "Proyectos Entregados"
+  },
+  "skills": {
+    "title": "Habilidades Técnicas",
+    "subtitle": "Tecnologías que uso en el día a día",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Base de Datos",
+    "tools": "Herramientas"
+  },
+  "projects": {
+    "title": "Proyectos en Producción",
+    "subtitle": "Haz clic en las tarjetas para ver detalles técnicos",
+    "view_details": "Ver detalles",
+    "repo": "Ver en GitHub",
+    "demo": "Ver Proyecto en Línea",
+    "github": "GitHub"
+  },
+  "certificates": {
+    "title": "Certificaciones & Formación",
+    "subtitle": "Calificaciones para el desarrollo profesional",
+    "verify": "Verificar"
+  },
+  "contact": {
+    "title": "¿Construyamos Algo Increíble?",
+    "subtitle": "Envía un mensaje y habla sobre tu proyecto",
+    "name": "Nombre completo *",
+    "email": "Correo profesional *",
+    "subject": "Asunto",
+    "message": "Mensaje *",
+    "send": "Enviar mensaje",
+    "sending": "Enviando...",
+    "success": "¡Mensaje enviado con éxito! Me pondré en contacto pronto.",
+    "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo.",
+    "required": "Por favor, completa todos los campos obligatorios.",
+    "linkedin": "LinkedIn",
+    "linkedin_desc": "Conéctate para networking profesional",
+    "linkedin_btn": "Visitar Perfil",
+    "github": "GitHub",
+    "github_desc": "Repositorios con código limpio y organizado",
+    "github_btn": "Acceder a GitHub"
+  },
+  "footer": {
+    "rights": "Rairson Fernandes – Desarrollador Full Stack • PHP, React, JavaScript • Clean Code & Scalability"
+  }
+}

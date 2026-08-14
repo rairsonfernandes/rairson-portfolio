@@ -1,0 +1,71 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "contact": "Contact"
+  },
+  "hero": {
+    "tag": "Full Stack Developer",
+    "title": "Rairson Fernandes",
+    "subtitle": "Full Stack Developer",
+    "description": "Specialized in PHP, React, JavaScript and REST API development. Passionate about creating modern, scalable applications focused on user experience.",
+    "btn_projects": "View Projects",
+    "btn_cv": "Download CV"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Learn more about my journey",
+    "p1": "Hello! I'm Rairson Fernandes, a Full Stack Developer with experience in web application development using PHP, JavaScript, React and MySQL.",
+    "p2": "I enjoy developing complete solutions, from backend to frontend, applying good programming practices, organized architecture and version control with Git.",
+    "p3": "I am currently expanding my knowledge in .NET and C#, aiming to become a specialist in these technologies and develop even more robust and scalable applications.",
+    "p4": "I am looking for my next opportunity to continue evolving as a developer and contribute to challenging projects.",
+    "stats": "+3 projects • 3+ years of code • Constantly evolving",
+    "projects_delivered": "Projects Delivered"
+  },
+  "skills": {
+    "title": "Technical Skills",
+    "subtitle": "Technologies I use on a daily basis",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "database": "Database",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Projects in Production",
+    "subtitle": "Click on the cards to see technical details",
+    "view_details": "View details",
+    "repo": "View on GitHub",
+    "demo": "View Live Demo",
+    "github": "GitHub"
+  },
+  "certificates": {
+    "title": "Certifications & Training",
+    "subtitle": "Qualifications for professional development",
+    "verify": "Verify"
+  },
+  "contact": {
+    "title": "Let's Build Something Amazing?",
+    "subtitle": "Send a message and talk about your project",
+    "name": "Full name *",
+    "email": "Professional email *",
+    "subject": "Subject",
+    "message": "Message *",
+    "send": "Send message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I will get back to you soon.",
+    "error": "Error sending message. Please try again.",
+    "required": "Please fill in all required fields.",
+    "linkedin": "LinkedIn",
+    "linkedin_desc": "Connect for professional networking",
+    "linkedin_btn": "Visit Profile",
+    "github": "GitHub",
+    "github_desc": "Repositories with clean and organized code",
+    "github_btn": "Access GitHub"
+  },
+  "footer": {
+    "rights": "Rairson Fernandes – Full Stack Developer • PHP, React, JavaScript • Clean Code & Scalability"
+  }
+}

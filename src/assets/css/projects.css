@@ -1,0 +1,666 @@
+/* ============================================================
+   PROJECTS GRID - CARDS
+   ============================================================ */
+.projects-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    width: 340px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--card-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(0, 242, 254, 0.05), rgba(79, 172, 254, 0.02));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-card:hover {
+    transform: translateY(-12px) scale(1.01);
+    border-color: #00f2fe;
+    box-shadow: 0 24px 48px -12px rgba(0, 242, 254, 0.25);
+}
+
+.project-img {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    background: #0a0f1a;
+}
+
+.project-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
+}
+
+.project-img .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-overlay span {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    background: rgba(0, 242, 254, 0.15);
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    letter-spacing: 0.5px;
+}
+
+.project-card:hover .project-overlay span {
+    transform: translateY(0);
+}
+
+.project-info {
+    padding: 22px 24px 24px;
+}
+
+.project-info h3 {
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.project-tech-tags span {
+    background: rgba(0, 242, 254, 0.1);
+    padding: 4px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    color: #4facfe;
+    font-weight: 500;
+    border: 1px solid rgba(0, 242, 254, 0.08);
+    transition: all 0.2s ease;
+}
+
+.project-tech-tags span:hover {
+    background: rgba(0, 242, 254, 0.18);
+    transform: scale(1.05);
+}
+
+/* ============================================================
+   MODAL PREMIUM - IMAGEM CORRIGIDA
+   ============================================================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 20px;
+}
+
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal-overlay.active .modal-container {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+.modal-container {
+    background: var(--bg-secondary);
+    border-radius: 32px;
+    max-width: 1100px;
+    width: 100%;
+    max-height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border: 1px solid rgba(0, 242, 254, 0.2);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(0, 242, 254, 0.05);
+    transform: scale(0.92) translateY(20px);
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+/* Botão Fechar (X) */
+.modal-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(90deg) scale(1.1);
+    border-color: rgba(0, 242, 254, 0.3);
+}
+
+/* ============================================================
+   MODAL - IMAGEM (CORRIGIDA)
+   ============================================================ */
+.modal-left {
+    flex: 1.2;
+    min-width: 300px;
+    min-height: 300px;
+    background: #0a0f1a;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.6s ease;
+    background: #0a0f1a;
+    padding: 20px;
+}
+
+.modal-left:hover img {
+    transform: scale(1.02);
+}
+
+/* Badge de tecnologia no canto da imagem */
+.modal-img-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #4facfe;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    z-index: 2;
+}
+
+/* ============================================================
+   MODAL - LADO DIREITO (CONTEÚDO)
+   ============================================================ */
+.modal-right {
+    flex: 1;
+    padding: 40px 40px 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    max-height: 90vh;
+    background: var(--bg-secondary);
+}
+
+.modal-right h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #ffffff, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.modal-subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.modal-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #00f2fe, #4facfe);
+    border-radius: 2px;
+    margin-bottom: 18px;
+}
+
+.modal-desc {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin: 8px 0 16px;
+    font-size: 15px;
+    white-space: pre-wrap;
+}
+
+.modal-tech {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 12px 0 22px;
+}
+
+.tech-badge {
+    background: rgba(0, 242, 254, 0.08);
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(0, 242, 254, 0.12);
+    color: #4facfe;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.tech-badge:hover {
+    background: rgba(0, 242, 254, 0.18);
+    transform: translateY(-2px);
+    border-color: rgba(0, 242, 254, 0.3);
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 14px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-modal {
+    padding: 12px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    letter-spacing: 0.3px;
+}
+
+.btn-project {
+    background: linear-gradient(135deg, #00f2fe, #4facfe);
+    color: #0a0f1a;
+    box-shadow: 0 4px 20px rgba(0, 242, 254, 0.25);
+}
+
+.btn-project:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(0, 242, 254, 0.35);
+}
+
+.btn-project:active {
+    transform: scale(0.97);
+}
+
+.btn-close {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-close:hover {
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ============================================================
+   TEMA CLARO - MODAL
+   ============================================================ */
+[data-theme="light"] .modal-container {
+    background: #ffffff;
+    border-color: rgba(79, 172, 254, 0.2);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .modal-close-btn {
+    background: rgba(255, 255, 255, 0.85);
+    border-color: rgba(10, 22, 40, 0.1);
+    color: #0a1628;
+}
+
+[data-theme="light"] .modal-close-btn:hover {
+    background: #ffffff;
+    border-color: rgba(79, 172, 254, 0.3);
+}
+
+[data-theme="light"] .modal-right h2 {
+    background: linear-gradient(135deg, #0a1628, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="light"] .modal-desc {
+    color: rgba(10, 22, 40, 0.75);
+}
+
+[data-theme="light"] .tech-badge {
+    background: rgba(79, 172, 254, 0.08);
+    color: #4facfe;
+    border-color: rgba(79, 172, 254, 0.1);
+}
+
+[data-theme="light"] .tech-badge:hover {
+    background: rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .btn-close {
+    background: rgba(10, 22, 40, 0.05);
+    color: #0a1628;
+    border-color: rgba(10, 22, 40, 0.08);
+}
+
+[data-theme="light"] .btn-close:hover {
+    background: rgba(10, 22, 40, 0.1);
+    border-color: rgba(10, 22, 40, 0.15);
+}
+
+[data-theme="light"] .modal-img-badge {
+    background: rgba(255, 255, 255, 0.85);
+    color: #4facfe;
+    border-color: rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .modal-left {
+    background: #f0f4ff;
+}
+
+[data-theme="light"] .modal-subtitle {
+    color: rgba(10, 22, 40, 0.4);
+}
+
+/* ============================================================
+   RESPONSIVO - IMAGEM CORRIGIDA
+   ============================================================ */
+@media (max-width: 850px) {
+    .modal-container {
+        flex-direction: column;
+        max-height: 95vh;
+        border-radius: 24px;
+        width: 98%;
+    }
+
+    .modal-left {
+        height: 250px;
+        min-height: 200px;
+        width: 100%;
+        flex: none;
+    }
+
+    .modal-left img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 12px;
+    }
+
+    .modal-right {
+        padding: 28px 24px 24px;
+        max-height: 55vh;
+    }
+
+    .modal-right h2 {
+        font-size: 26px;
+    }
+
+    .modal-close-btn {
+        top: 12px;
+        right: 12px;
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+
+    .modal-img-badge {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-container {
+        border-radius: 20px;
+        width: 100%;
+        max-height: 98vh;
+    }
+
+    .modal-left {
+        height: 200px;
+        min-height: 160px;
+        flex: none;
+    }
+
+    .modal-left img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        padding: 8px;
+    }
+
+    .modal-right {
+        padding: 20px 18px 18px;
+        max-height: 60vh;
+    }
+
+    .modal-right h2 {
+        font-size: 22px;
+    }
+
+    .modal-desc {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .modal-tech {
+        gap: 6px;
+    }
+
+    .tech-badge {
+        font-size: 11px;
+        padding: 4px 12px;
+    }
+
+    .modal-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-modal {
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .modal-close-btn {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================================
+   TEMA CLARO - PROJECT CARDS
+   ============================================================ */
+[data-theme="light"] .project-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .project-card:hover {
+    border-color: #4facfe;
+    box-shadow: 0 24px 48px -12px rgba(79, 172, 254, 0.2);
+}
+
+[data-theme="light"] .project-info h3 {
+    color: #0a1628;
+}
+
+[data-theme="light"] .project-info p {
+    color: rgba(10, 22, 40, 0.7);
+}
+
+[data-theme="light"] .project-tech-tags span {
+    background: rgba(79, 172, 254, 0.08);
+    color: #4facfe;
+    border-color: rgba(79, 172, 254, 0.06);
+}
+
+[data-theme="light"] .project-tech-tags span:hover {
+    background: rgba(79, 172, 254, 0.15);
+}
+
+[data-theme="light"] .project-overlay span {
+    background: rgba(79, 172, 254, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================================
+   TEMA CLARO - RESPONSIVO
+   ============================================================ */
+@media (max-width: 850px) {
+    [data-theme="light"] .modal-left {
+        background: #f0f4ff;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-theme="light"] .modal-left {
+        background: #f0f4ff;
+    }
+}
+
+/* ============================================================
+   ANIMAÇÕES
+   ============================================================ */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.92) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-overlay.active .modal-container {
+    animation: modalFadeIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+
+
+/* ============================================================
+   BOTÃO GITHUB
+   ============================================================ */
+.btn-github {
+    background: #24292e;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 20px rgba(36, 41, 46, 0.25);
+}
+
+.btn-github:hover {
+    background: #2f363d;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 35px rgba(36, 41, 46, 0.35);
+}
+
+.btn-github i {
+    font-size: 18px;
+}
+
+/* Tema Claro */
+[data-theme="light"] .btn-github {
+    background: #24292e;
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-github:hover {
+    background: #2f363d;
+}
