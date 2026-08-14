@@ -71,27 +71,29 @@ Este projeto foi criado para servir como meu portfólio profissional, demonstran
 | EmailJS | 3.11.0 | Envio de e-mails do formulário |
 | react-helmet-async | 2.0.4 | Gerenciamento de head SEO |
 
-
 ## 📁 Estrutura do Projeto
 
+A aplicação foi desenvolvida com **React + Vite** e organizada de forma modular, priorizando reutilização de componentes, manutenção do código, internacionalização e boas práticas de desenvolvimento.
+
+```text
 rairson-portfolio/
 │
 ├── public/
 │   ├── images/
 │   │   ├── Projetos/              # Imagens dos projetos
-│   │   ├── flags/                # Bandeiras dos idiomas
-│   │   └── logo/                 # Favicons e identidade visual
+│   │   ├── flags/                 # Bandeiras dos idiomas
+│   │   └── logo/                  # Favicons e identidade visual
 │   │
-│   ├── index.html                # Documento HTML principal e SEO
-│   ├── robots.txt                # Configurações para mecanismos de busca
-│   ├── sitemap.xml               # Sitemap para indexação
-│   └── site.webmanifest          # Configuração PWA / instalação
+│   ├── index.html                 # Documento HTML principal e SEO
+│   ├── robots.txt                 # Configurações para mecanismos de busca
+│   ├── sitemap.xml                # Sitemap para indexação
+│   └── site.webmanifest           # Configuração PWA / instalação
 │
 ├── src/
 │   ├── assets/
-│   │   └── css/                  # Estilos organizados por componente
+│   │   └── css/                   # Estilos organizados por componente
 │   │
-│   ├── components/               # Componentes React reutilizáveis
+│   ├── components/                # Componentes React reutilizáveis
 │   │   ├── About.jsx
 │   │   ├── Certificates.jsx
 │   │   ├── Contact.jsx
@@ -104,36 +106,35 @@ rairson-portfolio/
 │   │   ├── ScrollToTop.jsx
 │   │   └── Skills.jsx
 │   │
-│   ├── context/                  # Context API e estados globais
+│   ├── context/                   # Context API e estados globais
 │   │   ├── ProjectContext.jsx
 │   │   └── ThemeContext.jsx
 │   │
-│   ├── data/                     # Dados estáticos dos projetos
+│   ├── data/                      # Dados estáticos dos projetos
 │   │   └── projects.js
 │   │
-│   ├── i18n/                     # Internacionalização
-│   │   ├── locales/              # Arquivos de tradução
+│   ├── i18n/                      # Internacionalização
+│   │   ├── locales/               # Arquivos de tradução
 │   │   ├── config.js
 │   │   └── index.js
 │   │
-│   ├── images/                   # Imagens utilizadas pelos componentes
+│   ├── images/                    # Imagens utilizadas pelos componentes
 │   │
-│   ├── App.jsx                   # Componente raiz da aplicação
-│   └── index.js                  # Ponto de entrada da aplicação
+│   ├── App.jsx                    # Componente raiz da aplicação
+│   └── index.js                   # Ponto de entrada da aplicação
 │
 ├── screenshots/
-│   ├── desktop.png               # Preview desktop
-│   ├── tablet.png                # Preview tablet
-│   └── mobile.png                # Preview mobile
+│   ├── desktop.png                # Preview desktop
+│   ├── tablet.png                 # Preview tablet
+│   └── mobile.png                 # Preview mobile
 │
-├── .env.example                  # Modelo das variáveis de ambiente
-├── .gitignore                    # Arquivos ignorados pelo Git
-├── .oxlintrc.json                # Configuração do OXLint
-├── package.json                  # Dependências e scripts
-├── package-lock.json             # Versões das dependências
-├── vite.config.js                # Configuração do Vite
-└── README.md                     # Documentação do projeto
-
+├── .env.example                   # Modelo das variáveis de ambiente
+├── .gitignore                     # Arquivos ignorados pelo Git
+├── .oxlintrc.json                 # Configuração do OXLint
+├── package.json                   # Dependências e scripts
+├── package-lock.json              # Versões das dependências
+├── vite.config.js                 # Configuração do Vite
+└── README.md                      # Documentação do projeto
 
 
 
