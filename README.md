@@ -1,5 +1,3 @@
-📄 README.md - Portfólio de Rairson Fernandes
-
 # 🚀 Portfólio - Rairson Fernandes
 
 [![Deploy Status](https://img.shields.io/badge/Deploy-Ready-brightgreen)](https://rairsonfernandes.dev)
