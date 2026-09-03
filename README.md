@@ -17,7 +17,7 @@ Portfólio profissional desenvolvido em React com suporte a múltiplos idiomas, 
 
 Este projeto foi criado para servir como meu portfólio profissional, demonstrando minhas habilidades em desenvolvimento Front-end, internacionalização, boas práticas de SEO, performance e design responsivo.
 
-### 📈 Destaques 
+##  Destaques 
 
 - 🌍 **5 idiomas** (PT-PT, PT-BR, EN-US, FR, ES)
 - 📱 **100% Responsivo** em todos os dispositivos
