@@ -7,8 +7,6 @@
 
 Portfólio profissional desenvolvido em React com suporte a múltiplos idiomas, tema claro/escuro, SEO otimizado, animações modernas e integração com EmailJS para contato. Projetado para demonstrar projetos, competências e experiência de forma responsiva e performática.
 
-## 🌐 Demonstração 
-
 ### 📱 Screenshots
 
 | Desktop | Tablet | Mobile |
